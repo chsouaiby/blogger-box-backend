@@ -7,6 +7,17 @@ public class Category {
     private UUID id;
     private String name;
 
+    //Constructors
+    public Category(UUID id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Category() {
+        this.id = null;
+        this.name = null;
+    }
+
     // Getters & Setters
     public UUID getId() {
         return id;

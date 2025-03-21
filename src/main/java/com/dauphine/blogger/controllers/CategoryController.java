@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@Tag(name = "Category Controller")
+@Tag(name = "Category Controller", description = "Manage categories")
 public class CategoryController {
 
     private final List<Category> categories = new ArrayList<>();

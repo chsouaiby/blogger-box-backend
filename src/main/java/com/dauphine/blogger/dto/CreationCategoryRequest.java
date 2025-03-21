@@ -1,7 +1,7 @@
 package com.dauphine.blogger.dto;
 
 // DTO = Data Transfer Object
-public class CategoryRequest {
+public class CreationCategoryRequest {
 
     private String name;
 

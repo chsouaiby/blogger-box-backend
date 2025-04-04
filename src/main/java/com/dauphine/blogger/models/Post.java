@@ -1,5 +1,6 @@
 package com.dauphine.blogger.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -19,6 +20,7 @@ public class Post {
     private String content;
 
     @Column(name = "created_date")
+    @JsonFormat(pattern =  "dd-MM-yyyy HH:mm:ss")
     private Timestamp createdDate;
 
     @ManyToOne

@@ -1,4 +1,4 @@
-package com.dauphine.blogger.dto;
+package com.dauphine.blogger.dtos;
 
 public class UpdateCategoryRequest {
 }

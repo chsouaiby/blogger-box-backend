@@ -1,10 +1,12 @@
 package com.dauphine.blogger.controllers;
 
-import com.dauphine.blogger.dto.CreationCategoryRequest;
+import com.dauphine.blogger.dtos.CreationCategoryRequest;
+import com.dauphine.blogger.services.CategoryService;
 import com.dauphine.blogger.models.Category;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,9 +19,19 @@ public class CategoryController {
 
     private final List<Category> categories = new ArrayList<>();
 
-    @GetMapping("v1/categories") //request param required = false
-    @Operation(summary = "Get all categories", description = "Returns all the existent categories.")
-    public List<Category> getAll() {
+    private final CategoryService categoryService;
+
+    @Autowired
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
+
+    @GetMapping //("v1/categories") //
+    @Operation(summary = "Get all categories", description = "Returns all the existent categories or filters by name.")
+    public List<Category> getAll(@RequestParam(required = false) String name) {
+        List<Category> categories = name == null || name.isBlank()
+                ? categoryService.getAll()
+                : categoryService.getAllLikeName(name);
         return categories;
     }
 

@@ -1,4 +1,4 @@
-package com.dauphine.blogger.dto;
+package com.dauphine.blogger.dtos;
 
 import com.dauphine.blogger.services.PostService;
 import java.util.UUID;

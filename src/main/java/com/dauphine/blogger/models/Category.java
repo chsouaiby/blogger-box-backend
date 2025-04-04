@@ -23,9 +23,15 @@ public class Category {
         this.name = name;
     }
 
+    public Category(UUID id) {
+        this.id = id;
+    }
+
+    public Category(String name) {
+        this.name = name;
+    }
+
     public Category() {
-        this.id = null;
-        this.name = null;
     }
 
     // Getters & Setters

@@ -1,7 +1,7 @@
 package com.dauphine.blogger.controllers;
 
-import com.dauphine.blogger.dto.CreationPostRequest;
-import com.dauphine.blogger.dto.UpdatePostRequest;
+import com.dauphine.blogger.dtos.CreationPostRequest;
+import com.dauphine.blogger.dtos.UpdatePostRequest;
 import com.dauphine.blogger.models.Post;
 import com.dauphine.blogger.services.PostService;
 import io.swagger.v3.oas.annotations.Operation;

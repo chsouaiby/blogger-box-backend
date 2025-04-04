@@ -29,12 +29,12 @@ public class Post {
     public Post() {
     }
 
-    public Post(UUID id, String title, String content, Category category) {
+    public Post(UUID id, String title, String content, UUID categoryId) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.createdDate = new Timestamp(System.currentTimeMillis());
-        this.category = category;
+        this.category = new Category(categoryId);
     }
 
     // Getters & Setters
@@ -70,11 +70,11 @@ public class Post {
         this.createdDate = createdDate;
     }
 
-    public Category getCategory() {
-        return category;
+    public UUID getCategoryId() {
+        return category.getId();
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoryId(UUID categoryId) {
+        (this.category).setId(categoryId);
     }
 }

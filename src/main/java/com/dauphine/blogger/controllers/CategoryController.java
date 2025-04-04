@@ -27,7 +27,7 @@ public class CategoryController {
     }
 
     @GetMapping //("v1/categories") //
-    @Operation(summary = "Get all categories", description = "Returns all the existent categories or filters by name.")
+    @Operation(summary = "Get all categories (or by name)", description = "Returns all the existent categories or filters by name.")
     public List<Category> getAll(@RequestParam(required = false) String name) {
         List<Category> categories = name == null || name.isBlank()
                 ? categoryService.getAll()

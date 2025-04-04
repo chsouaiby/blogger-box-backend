@@ -17,7 +17,7 @@ public class CategoryController {
 
     private final List<Category> categories = new ArrayList<>();
 
-    @GetMapping("v1/categories")
+    @GetMapping("v1/categories") //request param required = false
     @Operation(summary = "Get all categories", description = "Returns all the existent categories.")
     public List<Category> getAll() {
         return categories;
